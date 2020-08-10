@@ -4,11 +4,9 @@ from rest_framework.settings import api_settings
 
 from user.serializers import UserSerialzers, AuthTokenSerializer
 
-
 class CreateUserView(generics.CreateAPIView):
     """ Create a new user in the system """
     serializer_class = UserSerialzers
-
 
 class CreatTokenView(ObtainAuthToken):
     """ Create a new auth token fo user """
@@ -24,4 +22,3 @@ class ManageUserVIew(generics.RetrieveUpdateAPIView):
     def get_object(self):
         """ Retrieve and return authentication user """
         return self.request.user
-
