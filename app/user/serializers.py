@@ -22,6 +22,9 @@ class UserSerialzers(serializers.ModelSerializer):
                 user.set_password(password)
                 user.save()
             return user
+        
+        def all_updates(self, updated_data):
+            pass
 
 class AuthTokenSerializer(serializers.Serializer):
     """ Serializer for the user authentication object """
